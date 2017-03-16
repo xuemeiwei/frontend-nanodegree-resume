@@ -247,5 +247,5 @@ Uncomment the code below when you're ready to implement a Google Map!
 // and adjust map bounds
   window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-  map.fitBounds(mapBounds);
+    map.fitBounds(mapBounds);
   });
