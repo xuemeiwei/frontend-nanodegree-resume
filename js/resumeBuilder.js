@@ -16,11 +16,11 @@ var bio = {
         "location": "San Jose"
     },
     "welcomeMessage": "Welcome to my personal webpage",
-    "bioPic": "images/fry.jpg",
+    "biopic": "images/fry.jpg",
     "skills": [
         "java", "html", "css", "javascript"
     ]
-}
+};
 var education = {
     "schools": [
         {
@@ -31,7 +31,7 @@ var education = {
                 "Computer Science",
                 "Computer Engineering"
             ],
-            "dates": 2018,
+            "dates": "2018",
             "url": "http://..."
         },
         {
@@ -42,7 +42,7 @@ var education = {
                 "Signal Processing",
                 "InformationProcessing"
             ],
-            "dates": 2014,
+            "dates": "2014",
             "url": "http://..."
         },
         {
@@ -52,7 +52,7 @@ var education = {
             "majors": [
                 "Communication Engineering"
             ],
-            "dates": 2011,
+            "dates": "2011",
             "url": "http://..."
         }
     ],
@@ -60,11 +60,11 @@ var education = {
         {
             "title": "Full Stack Web Developer Nanodegree",
             "school": "udacity",
-            "dates": 2015,
+            "dates": "2015",
             "url": "http://udacity"
         }
     ]
-}
+};
 
 var work = {
     "jobs": [
@@ -91,13 +91,19 @@ var projects = {
             "title": "Movie Trailers Website",
             "dates": "Nov. 2015",
             "description": "Implemented command line based interface using Python",
-            "images": "images/fry.jpg"
+            "images": [
+                "images/fry.jpg",
+                "images/fry.jpg"
+            ]
         },
         {
             "title": "Tournament Results",
             "dates": "Dec. 2015",
             "description": "Designed and Implemented database schema in PostgreSQL",
-            "images": "images/fry.jpg"
+            "images": [
+                "images/fry.jpg",
+                "images/fry.jpg"
+            ]
         }
     ]
 };
@@ -138,7 +144,7 @@ bio.display = function() {
             $("#skills").append(formattedSkill);
         });
     }
-}
+};
 bio.display();
 
 education.display = function() {
@@ -168,8 +174,8 @@ education.display = function() {
         $(".education-entry:last").append(formattedOnlineDates);
         $(".education-entry:last").append(formattedOnlineUrl);
 
-    })
-}
+    });
+};
 education.display();
 
 work.display = function() {
@@ -186,7 +192,7 @@ work.display = function() {
         var formattedDescription = HTMLworkDescription.replace("%data%",job.description);
         $(".work-entry:last").append(formattedDescription);
     });
-}
+};
 work.display();
 
 
@@ -199,10 +205,12 @@ projects.display = function() {
         $(".project-entry:last").append(formattedDates);
         var formattedDescription = HTMLworkDescription.replace("%data%", project.description);
         $(".project-entry:last").append(formattedDescription);
-        var formattedImage = HTMLprojectImage.replace("%data%", "images/fry.jpg");
-        $(".project-entry:last").append(formattedImage);
+        project.images.forEach(function(image) {
+            var formattedImage = HTMLprojectImage.replace("%data%", image);
+            $(".project-entry:last").append(formattedImage);
+        });
     });
-}
+};
 projects.display();
 
 //$('#main').append(internationalizeButton);

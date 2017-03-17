@@ -26,8 +26,9 @@ h6 {
 }
 
 h1 {
+  font-family: "Times New Roman";
   font-size: 40px;
-  color: #f5a623;
+  color: #23f5dd;
   line-height: 48px;
   display: inline;
 }
@@ -96,12 +97,12 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #d20ce4;
   line-height: 28px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #ff007c;
   display: none;
 }
 
